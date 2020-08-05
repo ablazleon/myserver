@@ -1,0 +1,125 @@
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596648918.9402285,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-ablazleon-myserver-pr-1-pr-buil-7thgr-2xv85[0m
+{"level":"info","ts":1596648926.7348936,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/*********/myserver.git @ master in path /workspace/source"}
+{"level":"warn","ts":1596648926.7349985,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596648926.7978806,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:d00e672ff4963c7794355acc5b5773be7e899828,1:efcda881ebe1283af4d6a9e3e761ef6156d919d5
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow efcda881ebe1283af4d6a9e3e761ef6156d919d5: d00e672ff4963c7794355acc5b5773be7e899828:
+DEBUG: ran git fetch --unshallow origin efcda881ebe1283af4d6a9e3e761ef6156d919d5: d00e672ff4963c7794355acc5b5773be7e899828: in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard d00e672ff4963c7794355acc5b5773be7e899828
+DEBUG: ran git reset --hard d00e672ff4963c7794355acc5b5773be7e899828 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge efcda881ebe1283af4d6a9e3e761ef6156d919d5
+DEBUG: ran git merge efcda881ebe1283af4d6a9e3e761ef6156d919d5 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e d00e672ff4963c7794355acc5b5773be7e899828..HEAD
+Merged SHA efcda881ebe1283af4d6a9e3e761ef6156d919d5 with commit message 'Update index.html' into base branch master
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.366s
+found 0 vulnerabilities
+
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0805 17:35:32.439569       9 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0001] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0001] Retrieving image manifest node:9-slim        
+E0805 17:35:32.832224       9 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+E0805 17:35:32.834942       9 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0002] Retrieving image manifest node:9-slim        
+[36mINFO[0m[0003] Built cross stage deps: map[]                
+[36mINFO[0m[0003] Retrieving image manifest node:9-slim        
+[36mINFO[0m[0004] Retrieving image manifest node:9-slim        
+[36mINFO[0m[0005] Executing 0 build triggers                   
+[36mINFO[0m[0005] cmd: EXPOSE                                  
+[36mINFO[0m[0005] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0005] Checking for cached layer gcr.io/striking-joy-285411/cache:129bc83f7a12a6ed17926f55d99e3aa5f0d71fa5ab0b631c228fb9b7369345fc... 
+[36mINFO[0m[0006] No cached layer found for cmd COPY . .       
+[36mINFO[0m[0006] Unpacking rootfs as cmd COPY . . requires it. 
+[36mINFO[0m[0011] ENV PORT 8080                                
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] EXPOSE 8080                                  
+[36mINFO[0m[0011] cmd: EXPOSE                                  
+[36mINFO[0m[0011] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] WORKDIR /usr/src/app                         
+[36mINFO[0m[0011] cmd: workdir                                 
+[36mINFO[0m[0011] Changed working directory to /usr/src/app    
+[36mINFO[0m[0011] Creating directory /usr/src/app              
+[36mINFO[0m[0011] Resolving 1 paths                            
+[36mINFO[0m[0011] Taking snapshot of files...                  
+[36mINFO[0m[0011] COPY . .                                     
+[36mINFO[0m[0011] Resolving 143 paths                          
+[36mINFO[0m[0011] Taking snapshot of files...                  
+[36mINFO[0m[0011] CMD ["npm", "start"]                         
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] Pushing layer gcr.io/striking-joy-285411/cache:129bc83f7a12a6ed17926f55d99e3aa5f0d71fa5ab0b631c228fb9b7369345fc to cache now 
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: gcr.io\/striking-joy-285411\/myserver|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mablazleon-myserver-pr-1-pr-buil-7thgr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Found commit author match for: ********* with email address: adrian.blazquez.leon@alumnos.upm.es
+Created environment *********-myserver-pr-1
+Namespace **-*********-myserver-pr-1 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: 35.195.210.72.nip.io
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: gcr.io/striking-joy-285411/myserver
+    tag: 0.0.0-SNAPSHOT-PR-1-1
+
+Updating PipelineActivities *********-myserver-pr-1-1 which has status Running
+Preview application is now available at: http://myserver.**-*********-myserver-pr-1.35.195.210.72.nip.io
